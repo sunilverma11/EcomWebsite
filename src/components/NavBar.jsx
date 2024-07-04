@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Checkout() {
+function NavBar() {
     return (
       <div className="">
-        Checkout
+        NavBar
       </div>
     );
   }
-  export default Checkout;
+  export default NavBar;
