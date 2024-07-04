@@ -3,11 +3,9 @@ import Home from "./pages/Home";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="App" style={{padding:'0',margin:'0',width:'100%',height:'100%'}}>
         <NavBar/>
         <Home/>
-      </header>
     </div>
   );
 }
