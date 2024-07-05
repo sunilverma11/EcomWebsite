@@ -4,9 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function SignupSignin() {
     return (
-      <div className="" style={{color:'green'}}>
-        <div style={{display:'flex',width:'70rem',height:'35VW',border:'1px solid red',margin:'auto'}}>
-          <div style={{width:'50%',border:'1px solid red',padding:'20px' }}>
+      <div className="" style={{color:'green',position:'relative',zIndex:'60',paddingTop:'50px',alignItems:'center'}}>
+        <div style={{display:'flex',width:'70rem',height:'35VW',border:'1px solid lightgray',margin:'auto'}}>
+          <div style={{width:'50%',borderRight:'1px solid lightgray',padding:'20px' }}>
           <h3>Welcome Back!</h3>
           <Form>
             <FormGroup>
@@ -36,7 +36,7 @@ function SignupSignin() {
             </Button>
           </Form>
           </div>
-          <div style={{width:'50%',border:'1px solid red',padding:'20px'}}>
+          <div style={{width:'50%',padding:'20px'}}>
             <h3>Register</h3>
           <Form>
           <FormGroup>
