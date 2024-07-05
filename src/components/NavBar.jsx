@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee,faSignIn,faCartShopping,faUser,faHeart } from '@fortawesome/free-solid-svg-icons'
+import { faPhone,faSignIn,faCartShopping,faUser,faHeart,faSignOut } from '@fortawesome/free-solid-svg-icons'
 
 function NavBar() {
     return (
@@ -10,11 +10,12 @@ function NavBar() {
             <h3>Solesphere</h3>
           </div>
           <div style={{display:'flex',width:'200px',justifyContent:'space-evenly'}}>
-          <p><FontAwesomeIcon icon={faHeart} type='regular' /></p>
-          <p><FontAwesomeIcon icon={faCoffee} /></p>
-          <p><FontAwesomeIcon icon={faUser} /></p>
-          <p><FontAwesomeIcon icon={faCartShopping} /></p>
-          <p><FontAwesomeIcon icon={faSignIn} /></p>
+          <p onClick={()=>{}}><FontAwesomeIcon icon={faPhone} /></p>
+          <p onClick={()=>{}}><FontAwesomeIcon icon={faSignIn} /></p>
+          <p onClick={()=>{}}><FontAwesomeIcon icon={faUser} /></p>
+          <p onClick={()=>{}}><FontAwesomeIcon icon={faHeart} /></p>
+          <p onClick={()=>{}}><FontAwesomeIcon icon={faCartShopping} /></p>
+          <p onClick={()=>{}}><FontAwesomeIcon icon={faSignOut} /></p>
           </div>
           
         </div>
