@@ -6,7 +6,7 @@ function SignupSignin() {
     return (
       <div className="" style={{color:'green'}}>
         <div style={{display:'flex',width:'70rem',height:'35VW',border:'1px solid red',margin:'auto'}}>
-          <div style={{width:'50%',border:'1px solid red',padding:'20px'}}>
+          <div style={{width:'50%',border:'1px solid red',padding:'20px' }}>
           <h3>Welcome Back!</h3>
           <Form>
             <FormGroup>
