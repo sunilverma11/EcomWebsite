@@ -6,9 +6,9 @@ import { faPhone,faSignIn,faCartShopping,faUser,faHeart,faSignOut } from '@forta
 function NavBar() {
     return (
       <div style={{color:'black'}}>        
-        <div style={{position:'absolute',alignItems:'center',width:'100%',height:'60px',backgroundColor:'white',display:'flex',justifyContent:'end'}}>
+        <div style={{position:'absolute',zIndex:'1',alignItems:'center',width:'100%',height:'60px',backgroundColor:'white',display:'flex',justifyContent:'end'}}>
           <div style={{width:'100%',textAlign:'left',paddingLeft:'5px'}}>
-            <h3>Solesphere</h3>
+          <Link to="/home" style={{color:'black',textDecoration:'none'}} ><h3>✺Solesphere✺</h3></Link>
           </div>
           <div style={{display:'flex',width:'200px',justifyContent:'space-evenly'}}>
           <p onClick={()=>{}}><FontAwesomeIcon icon={faPhone} /></p>
@@ -16,8 +16,8 @@ function NavBar() {
           <p><FontAwesomeIcon icon={faSignIn} /></p>
           </Link>
           <p onClick={()=>{}}><FontAwesomeIcon icon={faUser} /></p>
-          <p onClick={()=>{}}><FontAwesomeIcon icon={faHeart} /></p>
-          <p onClick={()=>{}}><FontAwesomeIcon icon={faCartShopping} /></p>
+          <Link to="/wishlist" style={{color:'black',textDecoration:'none'}} ><p onClick={()=>{}}><FontAwesomeIcon icon={faHeart} /></p></Link>
+          <Link to="/add-to-cart" style={{color:'black',textDecoration:'none'}} ><p onClick={()=>{}}><FontAwesomeIcon icon={faCartShopping} /></p></Link>
           <p onClick={()=>{}}><FontAwesomeIcon icon={faSignOut} /></p>
           </div>
           

@@ -14,7 +14,7 @@ function Home() {
         <div style={{position:'relative',top:'500px',alignItems:'right',width:'100%'}}>
             <div style={{textAlign:'right',paddingRight:'100px'}}>
             <Link to="/product"><Button color="primary">
-            Shop Here
+              Shop Here
             </Button></Link>
             </div>            
         </div>
