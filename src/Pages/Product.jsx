@@ -12,7 +12,7 @@ import NavBar from '../components/NavBar';
 import data from '../data.json'
 function Product() {
   const [products, setProducts] = useState([])
-  const [age, setAge] = useState('');
+  const [gender, setGender] = useState('');
   const [sortby, setSortby] = useState('')
 
   const addToCart = (ele) => {
@@ -22,6 +22,12 @@ function Product() {
   const handleChange = (event, type) => {
     type(event.target.value);
   };
+  const filterBrandBased = (brand)=>{
+    let tempData = [...data]
+    brand==='all'? tempData = [...data]:
+    tempData = tempData.filter((el) => el.brand===brand)
+    setProducts([...tempData])
+  }
   useEffect(() => {
     let tempData = [...data]
     if (sortby) {
@@ -30,11 +36,25 @@ function Product() {
       }
       if (sortby === 'htol') {
         tempData = tempData.sort((a, b) => b.price - a.price)
+      }      
+    }
+    if(gender){
+      if(gender=== 'women'){
+        console.log("women in")
+        tempData = tempData.filter((el) => el.gender==='WOMEN')
+      }
+      if(gender=== 'men'){
+        console.log("men in")
+        tempData = tempData.filter((el) => el.gender==='MEN')
+      }
+      if(gender=== 'kids'){
+        console.log("kids in")
+        tempData = tempData.filter((el) => el.gender==='KIDS')
       }
     }
     localStorage.setItem("productData", JSON.stringify(tempData))
     setProducts([...tempData])
-  }, [sortby])
+  }, [sortby,gender])
   return (
     <div className="">
       <NavBar />
@@ -69,8 +89,30 @@ function Product() {
             </Select>
           </FormControl>
         </Box> */}
-        <div></div>
+        <div>
+          <Button sx={{backgroundColor:'lightpink'}} onClick={()=>filterBrandBased('all')}>All</Button>
+          <Button sx={{backgroundColor:'lightpink',marginLeft:'10px'}} onClick={()=>filterBrandBased('NIKE')}>Nike</Button>
+          <Button sx={{backgroundColor:'lightpink',marginLeft:'10px'}} onClick={()=>filterBrandBased('ADIDAS')}>ADIDAS</Button>
+          <Button sx={{backgroundColor:'lightpink',marginLeft:'10px'}} onClick={()=>filterBrandBased('Reebok')}>Reebok</Button>
+          <Button sx={{backgroundColor:'lightpink',marginLeft:'10px'}} onClick={()=>filterBrandBased('HUSHPUPPIES')}>HUSHPUPPIES</Button>
+        </div>
         <Box sx={{}}>
+        <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+            <InputLabel id="demo-select-small-label">Gender</InputLabel>
+            <Select
+              labelId="demo-select-small-label"
+              id="gender-select-small"
+              value={gender}
+              label="Gender"
+              name="gender"
+              onChange={(e) => handleChange(e, setGender)}
+            >
+              <MenuItem value={''}>None</MenuItem>              
+              <MenuItem value={'kids'}>Kids</MenuItem>
+              <MenuItem value={'women'}>Women</MenuItem>
+              <MenuItem value={'men'}>Men</MenuItem>
+            </Select>
+          </FormControl>
           <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
             <InputLabel id="demo-select-small-label">Sort by</InputLabel>
             <Select
@@ -89,13 +131,15 @@ function Product() {
           </FormControl>
         </Box>
       </div>
-      <div style={{ width: '80%', alignItems: 'center', display: 'grid', gridTemplateColumns: 'auto auto auto', gap: '10px', margin: 'auto' }}>
+      <div style={{width: '80%', alignItems: 'center', display: 'grid', gridTemplateColumns: 'auto auto auto', gap: '10px', margin: 'auto' }}>
         {
           products.map((element) => {
-            return <div key={element.id} style={{ width: '100%', height: '450px' }}>
-              <img style={{ width: '100%', height: '75%' }} src={element.imageURL} alt='Lost shoes pic' />
+            return <div key={element.id} style={{border:'solid #D3D3D3 2px',borderRadius:'5px',padding:'10px', width: '100%', height: '550px' }}>
+              <span style={{color:'green',fontWeight:'bold',fontSize:'.8rem'}}>{element.brand}</span>
+              <img style={{ width: '100%', height: '65%' }} src={element.imageURL} alt='Lost shoes pic' />
               <p>{element.name}</p>
-              <h4 style={{ textAlign: 'center' }}>{element.price}$</h4>
+              <p style={{lineHeight:'0.2',color:'gray'}}>({element.category} Shoes)</p>             
+              <h4 style={{ textAlign: 'center' }}>Price: {element.price}$</h4>
               <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
                 <Button variant="contained" endIcon={<SendIcon />} onClick={() => addToCart(element)}>
                   Add to cart

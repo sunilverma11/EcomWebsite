@@ -7,8 +7,8 @@ function NavBar() {
     return (
       <div style={{color:'black'}}>        
         <div style={{position:'absolute',zIndex:'1',alignItems:'center',width:'100%',height:'60px',backgroundColor:'white',display:'flex',justifyContent:'end'}}>
-          <div style={{width:'100%',textAlign:'left',paddingLeft:'5px'}}>
-          <Link to="/home" style={{color:'black',textDecoration:'none'}} ><h3>✺Solesphere✺</h3></Link>
+          <div style={{textAlign:'left',paddingLeft:'5px',width:'100%'}}>
+          <Link to="/home" style={{color:'black',textDecoration:'none',color:'green'}} ><h3>✺Solesphere✺</h3></Link>
           </div>
           <div style={{display:'flex',width:'200px',justifyContent:'space-evenly'}}>
           <p onClick={()=>{}}><FontAwesomeIcon icon={faPhone} /></p>

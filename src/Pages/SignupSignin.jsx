@@ -8,7 +8,7 @@ function SignupSignin() {
       <div>
         <NavBar/>
       <div className="" style={{color:'green',position:'relative',paddingTop:'50px',alignItems:'center'}}>
-        <div style={{display:'flex',width:'70rem',height:'35VW',border:'1px solid lightgray',margin:'auto'}}>
+        <div style={{display:'flex',width:'70rem',height:'35VW',border:'1px solid lightgray',margin:'10px auto'}}>
           <div style={{width:'50%',borderRight:'1px solid lightgray',padding:'20px' }}>
           <h3>Welcome Back!</h3>
           <Form>
