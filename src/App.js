@@ -1,11 +1,11 @@
 import NavBar from "./components/NavBar";
-import Home from "./ages/Home";
-import AddToCart from "./ages/AddToCart";
-import Checkout from "./ages/Checkout";
-import Product from "./ages/Product";
-import SignupSignin from "./ages/SignupSignin";
+import Home from "./pages/Home";
+import AddToCart from "./pages/AddToCart";
+import Checkout from "./pages/Checkout";
+import Product from "./pages/Product";
+import SignupSignin from "./pages/SignupSignin";
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
-import Wishlist from "./ages/Wishlist";
+import Wishlist from "./pages/Wishlist";
 
 function App() {
   return (
